@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">CS:GO Counter</string>
+
+    <string-array name="teams_array">
+        <item>FaZe Clan</item>
+        <item>Natus Vincere</item>
+        <item>Virtus.Pro</item>
+        <item>G2 Esports</item>
+        <item>Fnatic</item>
+        <item>North</item>
+        <item>Astralis</item>
+        <item>Gambit Esports</item>
+        <item>Cloud9</item>
+        <item>QBF</item>
+        <item>Team Liquid</item>
+        <item>BIG</item>
+        <item>Vega Squadron</item>
+        <item>Space Soldiers</item>
+        <item>SK Gaming</item>
+        <item>mousesports</item>
+
+    </string-array>
+</resources>
