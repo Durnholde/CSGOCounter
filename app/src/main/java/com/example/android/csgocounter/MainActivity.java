@@ -58,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
     void buttonTeamAPoint(View view) {
         if (!isRoundEnded() && !isMatchEnded()) {
             teamARoundScore += 1;
-//            Spinner spinner_ct = (Spinner) findViewById(R.id.spinner_ct);
             winner = spinner_ct.getSelectedItem().toString();
             afterRound();
             displayTeamARoundScore(teamARoundScore);
@@ -69,7 +68,6 @@ public class MainActivity extends AppCompatActivity {
     void buttonTeamBPoint(View view) {
         if (!isRoundEnded() && !isMatchEnded()) {
             teamBRoundScore += 1;
- //           Spinner spinner_t = (Spinner) findViewById(R.id.spinner_t);
             winner = spinner_t.getSelectedItem().toString();
             afterRound();
             displayTeamBRoundScore(teamBRoundScore);
@@ -91,16 +89,12 @@ public class MainActivity extends AppCompatActivity {
         if (isRoundEnded()) {
             if (teamARoundScore > teamBRoundScore) {
                 teamAMatchScore += 1;
-//                Spinner spinner_ct = (Spinner) findViewById(R.id.spinner_ct);
-//                Spinner spinner_t = (Spinner) findViewById(R.id.spinner_t);
                 winner = spinner_ct.getSelectedItem().toString();
                 loser = spinner_t.getSelectedItem().toString();
                 afterMap();
             }
             else {
                 teamBMatchScore += 1;
-//                Spinner spinner_ct = (Spinner) findViewById(R.id.spinner_ct);
-//                Spinner spinner_t = (Spinner) findViewById(R.id.spinner_t);
                 winner = spinner_t.getSelectedItem().toString();
                 loser = spinner_ct.getSelectedItem().toString();
                 afterMap();
