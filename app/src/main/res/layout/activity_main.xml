@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/background"
+    android:orientation="vertical"
     android:padding="@dimen/padding_app"
     tools:context="com.example.android.csgocounter.MainActivity">
 
@@ -14,44 +13,44 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        
+
         <Spinner
             android:id="@+id/spinner_ct"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:entries="@array/teams_array"/>
+            android:layout_weight="1"
+            android:entries="@array/teams_array" />
 
         <Spinner
             android:id="@+id/spinner_t"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:entries="@array/teams_array"/>
+            android:layout_weight="1"
+            android:entries="@array/teams_array" />
     </LinearLayout>
-    
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:textSize="@dimen/text_size_score_caption"
-        android:text="Match score"/>
+        android:text="Match score"
+        android:textSize="@dimen/text_size_score_caption" />
 
     <TextView
         android:id="@+id/format"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="( BO1 )"
-        android:textSize="@dimen/text_size_format"
-        android:gravity="center"/>
+        android:textSize="@dimen/text_size_format" />
 
     <TextView
+        android:id="@+id/match_score"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/match_score"
         android:gravity="center"
-        android:textSize="@dimen/text_size_match_score"
-        android:text="0:0"/>
+        android:text="0:0"
+        android:textSize="@dimen/text_size_match_score" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -61,29 +60,64 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:textSize="@dimen/text_size_score_caption"
-                android:text="Round Score"/>
+                android:text="Round Score"
+                android:textSize="@dimen/text_size_score_caption" />
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:id="@+id/team_a_round_score"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:gravity="center"
-                android:textSize="@dimen/text_size_round_score"
-                android:text="0"/>
+                android:text="0"
+                android:textSize="@dimen/text_size_round_score" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Round won"
-                android:onClick="buttonTeamAPoint"/>
+                android:onClick="buttonTeamAPoint"
+                android:text="Round won" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="6"
+                    android:gravity="center"
+                    android:text="@string/statistic_1" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:onClick="teamAHeadshotsDecrease"
+                    android:text="-" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:id="@+id/team_a_headshots"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="0"
+                    android:gravity="center" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:onClick="teamAHeadshotsIncrease"
+                    android:text="+" />
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
@@ -96,40 +130,75 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:textSize="@dimen/text_size_score_caption"
-                android:text="Round Score"/>
+                android:text="Round Score"
+                android:textSize="@dimen/text_size_score_caption" />
 
             <TextView
+                android:id="@+id/team_b_round_score"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/team_b_round_score"
                 android:gravity="center"
-                android:textSize="@dimen/text_size_round_score"
-                android:text="0"/>
+                android:text="0"
+                android:textSize="@dimen/text_size_round_score" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="buttonTeamBPoint"
-                android:text="Round won"/>
+                android:text="Round won" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="6"
+                    android:gravity="center"
+                    android:text="@string/statistic_1" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:onClick="teamBHeadshotsDecrease"
+                    android:text="-" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:id="@+id/team_b_headshots"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="0"
+                    android:gravity="center" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:onClick="teamBHeadshotsIncrease"
+                    android:text="+" />
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 
     <TextView
-        android:layout_width="match_parent"
         android:id="@+id/message_box"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:textSize="@dimen/text_size_message"
         android:gravity="center"
-        android:text="Match about to start!"/>
+        android:text="Match about to start!"
+        android:textSize="@dimen/text_size_message" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:textSize="@dimen/text_size_score_caption"
-        android:text="Choose format"/>
+        android:text="Choose format"
+        android:textSize="@dimen/text_size_score_caption" />
 
     <RadioGroup
         android:layout_width="match_parent"
@@ -140,43 +209,43 @@
             android:id="@+id/button_bo1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:checked="true"
             android:layout_weight="1"
-            android:textColor="@color/text_app"
-            android:text="BO1"
             android:buttonTint="@color/colorAccent"
-            android:onClick="onRadioButtonClick"/>
+            android:checked="true"
+            android:onClick="onRadioButtonClick"
+            android:text="BO1"
+            android:textColor="@color/text_app" />
 
         <RadioButton
             android:id="@+id/button_bo3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textColor="@color/text_app"
-            android:text="BO3"
             android:buttonTint="@color/colorAccent"
-            android:onClick="onRadioButtonClick"/>
+            android:onClick="onRadioButtonClick"
+            android:text="BO3"
+            android:textColor="@color/text_app" />
 
         <RadioButton
             android:id="@+id/button_bo5"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textColor="@color/text_app"
             android:buttonTint="@color/colorAccent"
+            android:onClick="onRadioButtonClick"
             android:text="BO5"
-            android:onClick="onRadioButtonClick"/>
+            android:textColor="@color/text_app" />
     </RadioGroup>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Round summary"
-        android:onClick="roundSummary"/>
+        android:onClick="roundSummary"
+        android:text="Round summary" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Reset"
-        android:onClick="reset"/>
+        android:onClick="reset"
+        android:text="Reset" />
 </LinearLayout>
